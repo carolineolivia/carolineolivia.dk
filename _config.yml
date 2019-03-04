@@ -14,11 +14,13 @@ exclude:
   - "*README.md"
   - node_modules
   - LICENSE
+  - bower_components
 timezone: Europe/Copenhagen
 markdown: kramdown
 permalink: /:categories/:title/
 plugins:
   - jekyll-seo-tag
+  - jekyll-feed
 
 collections:
   posts:
