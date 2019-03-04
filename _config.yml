@@ -1,0 +1,46 @@
+name: CarolineOlivia
+title: CarolineOlivia.dk - Portfolio & Blog
+author: Carolineolivia
+url: http://www.carolineolivia.dk
+social:
+  name: Caroline Olivia
+  links:
+
+sass:
+  style: compressed
+
+highlighter: rouge
+exclude:
+  - "*README.md"
+  - node_modules
+  - LICENSE
+timezone: Europe/Copenhagen
+markdown: kramdown
+permalink: /:categories/:title/
+plugins:
+  - jekyll-seo-tag
+
+collections:
+  posts:
+    output: true
+    permalink: /posts/:path/
+  pages:
+    output: true
+    permalink: /:path/
+
+defaults:
+  -
+    scope:
+      path: "" # any file
+    values:
+      layout: page
+  -
+    scope:
+      type: posts
+    values:
+      layout: posts
+  -
+    scope:
+      type: pages
+    values:
+      layout: page
