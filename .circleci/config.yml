@@ -49,7 +49,7 @@ jobs:
             - the-repo-{{ .Revision }}
       - run: 
           name: Build Jekyll
-          command: jekyll buid          
+          command: jekyll build          
       - run:
           name: Log the version
           command: cp version.txt _site/version.txt
