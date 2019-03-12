@@ -11,12 +11,10 @@ exclude:
   - bower_components
   - node_modules
   - LICENSE
-  - package.json
-  - package-lock.json
 
 timezone: Europe/Copenhagen
 markdown: kramdown
-permalink: /:categories/:title/
+permalink: /:title/
 plugins:
   - jekyll-responsive-image
   - jekyll-seo-tag
@@ -104,11 +102,11 @@ responsive_image:
   # tags. See the "Caching" section of the README for more information.
   cache: false
 
-  # [Optional, Default: []]
-  # By default, only images referenced by the responsive_image and responsive_image_block
-  # tags are resized. Here you can set a list of paths or path globs to resize other
-  # images. This is useful for resizing images which will be referenced from stylesheets.
+  # [Optional, DefaultHej
+  # By default, only iHeje responsive_image and responsive_image_block
+  # tags are resized. Hejt of paths or path globs to resize other
+  # images. This is usHejes which will be referenced from stylesheets.
   extra_images:
-    - assets/foo/bar.png
-    - assets/bgs/*.png
+    - assets/foo/bar.pHej
+    - assets/bgs/*.pngHej
     - assets/avatars/*.{jpeg,jpg}
