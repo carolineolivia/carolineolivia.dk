@@ -1,0 +1,113 @@
+version: 2
+jobs:
+  build:
+    working_directory: /app
+    # The primary container is an instance of the first list image listed. Your build commands run in this container.
+    docker:
+      - image: lakruzz/jekyll-plus:1.0.1
+    steps:
+      - checkout
+      - run:
+          name: Jekyll
+          command: jekyll build
+      - run:
+          name: Log version.txt
+          command: echo "Built with jekyll from $(git rev-parse --short HEAD) of carolineolivia/carolineolivia.dk" > _site/version.txt
+      - save_cache:
+          key: the-site-{{ .Revision }}
+          paths:
+            - _site
+
+  deliver:
+    docker:
+      - image: circleci/node:8.10
+    steps:
+      - checkout
+      - run:
+          name: Intro
+          command: ./play --manuscript .circleci/manuscript.yml --part gitintro
+      - run:
+          name: integrate
+          command: ./play --manuscript .circleci/manuscript.yml --part integrate
+      - run:
+          name: Deliver
+          command: ./play --manuscript .circleci/manuscript.yml --part deliver
+
+  test:
+    working_directory: /app/_site
+    docker:
+      - image: 18fgsa/html-proofer
+    steps:
+      - restore_cache:
+          keys:
+            - the-site-{{ .Revision }}
+      - run:
+          name: Htmlproofer
+          command: htmlproofer --allow-hash-href  --empty-alt-ignore --enforce-https  --check-favicon --check-opengraph --report-missing-names --report-invalid-tags .
+
+
+  prod:
+    working_directory: /app/_site
+    docker:
+      - image: lakruzz/jekyll-plus:1.0.1
+    steps:
+      - restore_cache:
+          keys:
+            - the-site-{{ .Revision }}
+      - run:
+          name: Set git user.name
+          command: git config --global user.name "Circle CI by @carolineolivia"
+      - run:
+          name: Set git user.email
+          command: git config --global user.email "carolineolivia@outlook.dk"
+      - run:
+          name: Set git push.default
+          command: git config --global push.default simple
+      - run:
+          command: git init
+      - run:
+          name: Set remote
+          command: git remote add production https://$(printenv GHTOKEN)@github.com/carolineoliva/www.carolineolivia.dk.git
+      - run:
+          command: git add -A .
+      - run:
+          name: Git commit
+          command: git commit -F version.txt
+      - run:
+          name: Git push
+          command: git push -f production master
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
+      - test:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
+      - deliver:
+          requires:
+            - build
+            - test
+          filters:
+            branches:
+              only:
+                - /ready\/.+/
+      - stage:
+          requires:
+            - build
+            - test
+          filters:
+            branches:
+              only: master
+     
