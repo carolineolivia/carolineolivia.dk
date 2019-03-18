@@ -9,8 +9,8 @@ jobs:
     docker:
       - image: lakruzz/play:latest
         environment:
-          PLAY_USER_NAME:    Circle CI by @Prolike
-          PLAY_USER_EMAIL:   circleci@prolike.io
+          PLAY_USER_NAME:    Circle CI by @CarolineOlivia
+          PLAY_USER_EMAIL:   carolineolivia@outlook.dk
     steps:
       - checkout
       - run:
