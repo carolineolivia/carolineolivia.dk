@@ -1,21 +1,21 @@
 // Navigation css
 
-
 .navbar {
-  background-color: #a86d6d;
-  color: white;
-  font-family: 'Permanent Marker';
-  border-radius: 7px;
+
+  background-color: white;
+
+.collapse {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 20px;
 
   a {
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
+    color: #3f3f3f;
+    transition: 0.3s;
   }
-  
-  .navbar-toggler-icon, .navbar-toggler {
-    color: white;
-    z-index: 100;
+
+  a:hover {
+    color: #80ddb0;
   }
 }
 
+}
