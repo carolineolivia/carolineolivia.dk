@@ -1,5 +1,5 @@
 ---
-title: Story2
+title: Keto & coding
 author: Caroline
 tags: [benjamin, woop, LEAN]
 image: ../img/stories/kanin1.jpg

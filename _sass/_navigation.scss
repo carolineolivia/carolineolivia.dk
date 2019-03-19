@@ -1,12 +1,19 @@
 // Navigation css
 
 .navbar {
-
   background-color: white;
+
+.navbar-toggler, .navbar-toggler-icon {
+  color: #3f3f3f;
+}
 
 .collapse {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 20px;
+  
+  .navbar-nav {
+    text-align: center;
+  }
 
   a {
     color: #3f3f3f;
