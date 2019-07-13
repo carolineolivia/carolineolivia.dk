@@ -1,0 +1,29 @@
+.product {
+  .p-img {
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(27, 27, 27);
+  }
+
+  .p-text {
+
+    margin-top: 50px;
+
+    a {
+      text-align: center;
+      display: inline-block;
+      margin: auto;
+    }
+
+    a,
+    a:hover {
+      margin-bottom: 20px;
+      color: rgb(27, 27, 27);
+      text-decoration: none;
+    }
+
+  }
+}

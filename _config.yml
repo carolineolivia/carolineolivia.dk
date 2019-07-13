@@ -21,29 +21,24 @@ plugins:
   - jekyll-feed
 
 collections:
-  posts:
+  products:
     output: true
-    permalink: /posts/:path/
+    permalink: /portfolio/:title/
   pages:
     output: true
-    permalink: /:path/
+    permalink: /:title/
 
 defaults:
   -
     scope:
       path: "" # any file
     values:
-      layout: page
+      layout: default
   -
     scope:
-      type: posts
+      type: products
     values:
-      layout: post
-  -
-    scope:
-      type: pages
-    values:
-      layout: page
+      layout: product
   
 
 
@@ -60,9 +55,9 @@ responsive_image:
   # An array of resize configuration objects. Each object must contain at least
   # a `width` value.
   sizes:
-    - width: 255
-    - width: 510
-    - width: 1020
+    - width: 400
+    - width: 800
+    - width: 1500
 
   # [Optional, Default: false]
   # Rotate resized images depending on their EXIF rotation attribute. Useful for
@@ -91,7 +86,7 @@ responsive_image:
   #   %{width}       Width of the resized image
   #   %{height}      Height of the resized image
   #
-  output_path_format: assets/responsive/%{width}/%{basename}
+  output_path_format: assets/%{width}/%{basename}
 
   # [Optional, Default: true]
   # Whether or not to save the generated assets into the source folder.
@@ -107,6 +102,4 @@ responsive_image:
   # tags are resized. Hejt of paths or path globs to resize other
   # images. This is usHejes which will be referenced from stylesheets.
   extra_images:
-    - assets/foo/bar.pHej
-    - assets/bgs/*.pngHej
-    - assets/avatars/*.{jpeg,jpg}
+    - img/*.{jpeg,jpg,png}

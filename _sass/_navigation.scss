@@ -1,28 +1,51 @@
-// Navigation css
+.title {
+  margin-top: 5%;
+  width: 100%;
+  text-align: center;
 
-.navbar {
-  background-color: white;
-
-.navbar-toggler, .navbar-toggler-icon {
-  color: #3f3f3f;
-}
-
-.collapse {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 20px;
-  
-  .navbar-nav {
-    text-align: center;
+  h2 {
+    font-size: 20px;
+    font-weight: 200;
   }
 
   a {
-    color: #3f3f3f;
-    transition: 0.3s;
+    margin: 10px;
+    color: rgb(27, 27, 27);
+    text-decoration: none;
+    font-size: 30px;
+    transition: .25s ease-in-out;
   }
 
   a:hover {
-    color: #80ddb0;
+    color: #6cb4dd;
   }
 }
 
+.nav {
+  margin-top: 50px;
+  margin-bottom: 75px;
+
+  .nav-item {
+    a {
+      border-radius: 2px;
+      height: 50px;
+      width: 100px;
+      margin: 10px;
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgb(27, 27, 27);
+      color: rgb(27, 27, 27);
+      transition: .25s ease-in-out;
+      text-transform: lowercase;
+      padding: 0;
+    }
+
+    a:hover {
+      background-color: #6cb4dd;
+      border: 1px solid #6cb4dd;
+      color: white;
+    }
+  }
 }

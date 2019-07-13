@@ -7,8 +7,15 @@
   {% include head.html %}
   
   <body id="page-top">
-    
-      {{ content }}
+    {% include components/navigation.html %}
+
+    <div class="container">
+        {{content}}
+
+        {% include components/footer.html %}
+    </div>
+   
+    {% include scripts/plugins.html %}
     
   </body>
 
