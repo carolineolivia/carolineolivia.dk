@@ -21,24 +21,16 @@ plugins:
   - jekyll-feed
 
 collections:
-  products:
+  posts:
     output: true
-    permalink: /portfolio/:title/
-  pages:
-    output: true
-    permalink: /:title/
+    permalink: /posts/:categories/:title/
 
 defaults:
   -
     scope:
-      path: "" # any file
+      type: posts
     values:
-      layout: default
-  -
-    scope:
-      type: products
-    values:
-      layout: product
+      layout: post
   
 
 

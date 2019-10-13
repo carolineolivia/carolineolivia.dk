@@ -1,51 +1,118 @@
-.title {
-  margin-top: 5%;
-  width: 100%;
-  text-align: center;
-
-  h2 {
-    font-size: 20px;
-    font-weight: 200;
-  }
-
-  a {
-    margin: 10px;
-    color: rgb(27, 27, 27);
-    text-decoration: none;
-    font-size: 30px;
-    transition: .25s ease-in-out;
-  }
-
-  a:hover {
-    color: #6cb4dd;
-  }
+body {
+  position: relative;
 }
 
-.nav {
-  margin-top: 50px;
-  margin-bottom: 75px;
+#navigation {
+  width: 1000px;
+  color: rgb(172, 172, 172);
+  margin: 150px auto 100px auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 5px;
 
-  .nav-item {
+
+  h1 {
+ 
+  }
+  
+  .fa-hamburger {
+    display: none;
+  }
+
+  .close {
+        display: none;
+  }
+
+  .showen {
+    width: auto;
+    height: auto;
+    display: unset;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+
     a {
-      border-radius: 2px;
-      height: 50px;
-      width: 100px;
-      margin: 10px;
-      display: flex;
-      align-content: center;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgb(27, 27, 27);
-      color: rgb(27, 27, 27);
-      transition: .25s ease-in-out;
-      text-transform: lowercase;
-      padding: 0;
+      color: rgb(172, 172, 172);
+      padding: 0 10px;
+      text-align: center;
+      margin: 0 5px;
+    }
+    a:hover {
+      color: #666666;
+      transition: 0.5s;
+      text-decoration: none;
+    }
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  #navigation {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    .fa-hamburger {
+      display: inline-block;
     }
 
-    a:hover {
-      background-color: #6cb4dd;
-      border: 1px solid #6cb4dd;
-      color: white;
+    h1 {
+      font-size: 12px;
     }
+    .hidden {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+
+    .showen {
+      width: 300px !important;
+      height: 300px !important;
+      display: flex !important;
+      background-color: whitesmoke;
+      overflow: hidden;
+      margin: -150px 0 0 -150px;
+    }
+  
+    .navbar {
+      justify-content: center;
+      position: fixed;
+      flex-direction: column;
+      overflow: hidden;
+      width: 0;
+      height: 0;
+      left: 50%;
+      top: 50%;
+      color: #313131;
+      border-radius: 600px;
+      -webkit-transition: width 2s, height 2s; /* For Safari 3.1 to 6.0 */
+      transition: 0.5s;
+
+      .close {
+        display: inline;
+      }
+
+      
+      a {
+        color: #313131;
+        padding: 0 10px;
+        font-size: 20px;
+        text-align: center;
+        margin: 0 5px;
+      }
+      a:hover {
+        color: #313131;
+        transition: 0.5s;
+        text-decoration: none;
+      }
+    
+    }
+  
   }
 }

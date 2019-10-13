@@ -1,0 +1,2 @@
+config.assets.raise_runtime_errors = true
+config.web_console.whitelisted_ips = replace_this_with_the_public_ip

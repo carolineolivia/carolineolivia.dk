@@ -1,28 +1,93 @@
 
 * {
-    font-family: 'DM Serif Display', serif;
+  font-family: 'Montserrat', Arial, sans-serif;
 
 }
 
-.footer {
-    .col-12 {
-      margin: 50px 0;
-        flex-direction: column;
-        justify-items: center;
-        align-content: center;
-        align-items: center;
+@import url(https://fonts.googleapis.com/css?family=Anton|Montserrat:300,300i,400,400i,700,700i|Oswald);
 
-        a {
-            color: rgb(27, 27, 27);
-            transition: .25s ease-in-out;
-            text-transform: lowercase;
-            padding: 0;
-            text-decoration: none;
-          }
-      
-          a:hover {
 
-            color: #6cb4dd;
-          }
+body {
+  background-color: #313131;
+  color: whitesmoke;
+}
+
+#tags-container {
+  background-color: whitesmoke;
+  margin: auto;
+  width: 1000px;
+  padding: 75px;
+  color: #313131;
+  text-align: center;
+
+  .tags-array {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+    .tag-array-link, .tag-array-link:hover {
+      font-size: 15px;
+        margin: 20px 0;
+        background-color: #585858;
+        color: whitesmoke;
+        border-radius: 5px;
+        padding: 3px 10px 5px 10px;
+        font-weight: 200;
+        margin: 0 5px;
+        text-decoration: none;
     }
+  }
+
+  .all-tags {
+    margin: 50px 0;
+    
+    hr {
+      margin-top: 5px;
+    }
+
+    a {
+      color: #585858;
+      transition: 0.5s;
+    }
+    a.tag {
+      color: #919191;
+      font-size: 13px;
+    }
+
+    a:hover, a.tag:hover {
+      text-decoration: none;
+      color: #c4c4c4;
+
+    }
+
+
+
+    .all-tags-posts {
+      margin: 50px 0;
+    h2 {
+      margin:25px 0 0 0;
+      font-size: 28px;
+    }
+
+
+    .posts-of-tag {
+      margin: 20px 0;
+
+    h3 {
+      color: #919191;
+      font-size: 20px;
+    }
+
+    h5 {
+      font-size: 12px;
+      color: #919191;
+      margin: 0;
+    }
+  }
+  }
+
+}
+
+
 }
