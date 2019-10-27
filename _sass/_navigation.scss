@@ -41,7 +41,7 @@ body {
       margin: 0 5px;
     }
     a:hover {
-      color: #666666;
+      opacity: 0.5;
       transition: 0.5s;
       text-decoration: none;
     }
@@ -107,7 +107,7 @@ body {
         margin: 0 5px;
       }
       a:hover {
-        color: #313131;
+        opacity: 0.5;
         transition: 0.5s;
         text-decoration: none;
       }

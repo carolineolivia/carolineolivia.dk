@@ -1,0 +1,13 @@
+
+
+.post-container {
+    width: 1000px;
+    .post-image {
+        width: 1000px;
+        height: 400px;
+        img {
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
