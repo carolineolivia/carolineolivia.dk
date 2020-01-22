@@ -1,5 +1,5 @@
 ---
-label: products
+label: posts
 hide_body: false
 fields:
 - name: billed
