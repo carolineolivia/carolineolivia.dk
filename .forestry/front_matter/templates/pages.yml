@@ -1,0 +1,25 @@
+---
+label: pages
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: file
+  name: image
+  label: image
+- type: text
+  name: subtitle
+  label: subtitle
+- type: text
+  name: pageurl
+  label: pageurl
+- type: list
+  name: tags
+  label: tags
+- type: text
+  name: categories
+  label: categories
+- type: text
+  name: description
+  label: description
