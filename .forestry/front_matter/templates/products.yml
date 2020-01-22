@@ -1,4 +1,11 @@
 ---
 label: products
 hide_body: false
-fields: []
+fields:
+- name: billed
+  type: file
+  config:
+    maxSize: 250
+  label: Billed
+  description: Billeduploadetr
+  hidden: false
