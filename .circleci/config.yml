@@ -59,30 +59,6 @@ jobs:
             - _site
             - .circleci
 
-  html-proofer:
-    working_directory: /app
-    docker:
-      - image: 18fgsa/html-proofer
-    steps:
-      - restore_cache:
-          keys:
-            - the-built-repo-{{ .Revision }}
-      - run:
-          name: Htmlproofer
-          command: htmlproofer --disable-external --allow-hash-href --checks-to-ignore ImageCheck _site
-
-  html-proofer-extended:
-    working_directory: /app
-    docker:
-      - image: 18fgsa/html-proofer
-    steps:
-      - restore_cache:
-          keys:
-            - the-built-repo-{{ .Revision }}
-      - run:
-          name: Htmlproofer
-          command: htmlproofer --allow-hash-href  --enforce-https  --check-favicon --check-opengraph --report-missing-names --report-invalid-tags  -- _site
-
   deliver:
     working_directory: /app
     docker:
@@ -131,29 +107,10 @@ workflows:
               only: /.*/
             branches:
               only: /.*/
-      - html-proofer: # Verify that the thing to deploy is good
-          requires:
-            - prep-repo
-            - jekyll-build
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              only: /.*/
-      - html-proofer-extended: # Run more tests in parallel
-          requires:
-            - prep-repo
-            - jekyll-build
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              only: /.*/
       - deliver: # Push the target branch to remote - only when all is good and only on ready branches
           requires:
             - prep-repo
             - jekyll-build
-            - html-proofer
           filters:
             branches:
               only:
@@ -162,7 +119,6 @@ workflows:
           requires:
             - prep-repo
             - jekyll-build
-            - html-proofer
           filters:
             branches:
               only:
