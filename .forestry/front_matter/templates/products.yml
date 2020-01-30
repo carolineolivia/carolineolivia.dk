@@ -1,0 +1,11 @@
+---
+label: posts
+hide_body: false
+fields:
+- name: billed
+  type: file
+  config:
+    maxSize: 250
+  label: Billed
+  description: Billeduploadetr
+  hidden: false
