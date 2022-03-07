@@ -96,3 +96,4 @@ responsive_image:
   # images. This is usHejes which will be referenced from stylesheets.
   extra_images:
     - img/*.{jpeg,jpg,png}
+theme: jekyll-theme-cayman
