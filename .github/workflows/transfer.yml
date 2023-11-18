@@ -8,6 +8,7 @@ on:
       
 env:
   ORIGIN: origin
+  GITHUB_TOKEN: ${{secrets.API_TOKEN_GITHUB}}
 
 permissions:
   contents: write
@@ -37,7 +38,7 @@ jobs:
         
       - name: Push changes to default target branch
         run: |
-          git clone https://carolineolivia@github.com/copenhagencoaching/www.carolineneolivia.dk.git
+          git clone https://carolineolivia:${{secrets.API_TOKEN_GITHUB}}@github.com/copenhagencoaching/www.carolineneolivia.dk.git
           cd neew
           rm -rf *
           cp -r ../_site/* .
