@@ -38,7 +38,7 @@ jobs:
         
       - name: Push changes to default target branch
         run: |
-          git clone https://carolineolivia:${{secrets.API_TOKEN_GITHUB}}@github.com/copenhagencoaching/www.carolineneolivia.dk.git
+          git clone https://carolineolivia:${{secrets.API_TOKEN_GITHUB}}@github.com/copenhagencoaching/www.carolineolivia.dk.git
           cd neew
           rm -rf *
           cp -r ../_site/* .
