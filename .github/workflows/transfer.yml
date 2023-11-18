@@ -28,12 +28,6 @@ jobs:
           git config --global user.name "carolineolivia"
           git config --global user.email "carolineolivia@outlook.dk"
           git config --global advice.skippedCherryPicks false
-
-      - name: Rebased against default target branch
-        run: |
-          set -ex
-          TARGET_BRANCH=$( gh repo view --json defaultBranchRef --jq .defaultBranchRef.name )
-          git rebase ${ORIGIN}/${TARGET_BRANCH}
           
       - name: Do the build
         uses: docker://lakruzz/jekyll-plus:latest
