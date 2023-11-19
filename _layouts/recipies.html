@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div id="home-container">
+
+    {% for re in site.recipies %}
+    <a href="{{ re.url }}">{{ re.title }}</a>
+    {% endfor %}
+
+</div>

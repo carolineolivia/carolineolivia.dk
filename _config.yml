@@ -24,6 +24,12 @@ collections:
   posts:
     output: true
     permalink: /posts/:categories/:title/
+  pages:
+    output: true
+    permalink: /:title/
+  recipies:
+    output: true
+    permalink: /opskrifter/:title/
 
 defaults:
   -
@@ -31,6 +37,16 @@ defaults:
       type: posts
     values:
       layout: post
+  -
+    scope:
+      type: recipies
+    values:
+      layout: recepi
+  -
+    scope:
+      type: pages
+    values:
+      layout: default
   
 
 
