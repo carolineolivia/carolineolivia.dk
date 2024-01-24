@@ -11,3 +11,13 @@
         }
     }
 }
+.square-100{
+    position: relative;
+    width: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:contain; /* you change this to "contain" if you don't want the images to be cropped */
+    overflow: hidden
+}

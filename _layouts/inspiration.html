@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div id="home-container">
+    <div class="text-center"><h3>Inspiration</h3></div>
+    <hr>
+    <div class="mb-5"></div>
+    <div class="row">
+        {% for p in site.posts | sort: date %}
+        <div class="col-4">
+            <a href="{{ p.url }}">
+                <div class="hover--1 hover-1 text-white rounded">
+                    <img src="{{ p.image }}" alt="">
+                    <div class="hover-overlay"></div>
+                    <div class="hover-1-content px-3 py-3">
+                        <h5 class="hover-1-title text-uppercase font-weight-bold mb-0">{{ p.title }}</h5>
+                        <p class="hover-1-description font-weight-light mb-0">{{ p.description }}</p>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>

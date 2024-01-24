@@ -3,8 +3,22 @@ layout: default
 ---
 <div id="home-container">
 
-    {% for re in site.recipies %}
-    <a href="{{ re.url }}">{{ re.title }}</a>
-    {% endfor %}
+    <div class="text-center"><h3>Opskrifter</h3></div>
+    <hr>
+    <div class="mb-5"></div>
+    <div class="row">
+        {% for re in site.recipies %}
+        <div class="col-sm-4 mb-3 mb-lg-0">
+            <a href="{{ re.url }}">
+                <div class="hover--3 hover-3 text-white rounded"><img src="{{ re.thumbnail }}" alt="">
+                    <div class="hover-overlay"></div>
+                    <div class="hover-3-content px-5 py-4">
+                        <h5 class="hover-3-description text-uppercase mb-0">{{ re.title }}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
 
 </div>

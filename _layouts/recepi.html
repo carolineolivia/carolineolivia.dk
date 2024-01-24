@@ -3,7 +3,23 @@ layout: default
 ---
 
 <div id="home-container">
-    <img src="{{ page.image }}" alt="" class="img-fluid">
-    <h2>{{ page.title }}</h2>
-    <a href="{{ page.pdf }}" target="_blank">Download opskriften</a>
+    <div class="post-box">
+        <img src="{{ page.image }}" alt="{{ page.title }}">
+        <div class="post-text">
+                <h2>{{ page.title }} </h2>
+                <h3>{{ page.date | date_to_long_string }}</h3>
+                <hr>
+                
+            <div class="post-content">{{ page.content }}
+                <a href="{{page.pdf}}" class="">Download opskriften</a>
+            </div>
+
+            <hr>
+            <div class="tags"> 
+                
+            
+        </div>
+        </div>
+    </div>
+
 </div>

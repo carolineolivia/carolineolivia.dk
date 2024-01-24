@@ -14,17 +14,18 @@
 
       h2 {
         margin-bottom: 30px;
-        font-weight: 200;
+        font-weight: 600;
       }
 
       h3 {
         color: #9b9b9b;
-        font-weight: 500;
+        font-weight: 600;
         text-transform: uppercase;
         font-size: 15px;
         margin-bottom: 5px;
       }
-      
+
+
       hr {
         color: #585858;
         margin: 0;
@@ -40,6 +41,10 @@
           text-transform: uppercase;
           text-decoration: none;
         }
+        h4 {
+          font-weight: 600;
+        }
+        
       }
 
       .tags {
